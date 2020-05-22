@@ -2,27 +2,26 @@
 
 
 #container{
-    position: relative;
-    top: 30px;
+    display: grid;
     outline: 2px solid #000;
-    margin: auto;
     height: 960px;
     width: 960px;
-    padding: 0;
     border: none;
-    height: 500px;
-    width: 100%;
-    background-color: purple;
+    background-color: #000000;
+    grid-auto-flow: column;
+    float: right;
+    grid-row: 960px; 
+    grid-column: 960px;
+
 
 }
 
+
 .grid {
-    margin: 0;
-    padding: 0;
     border: none;
-    outline: 1px solid #000;
-    display: inline-block;
-    width: auto;
-    height: auto;
-    background-color: aliceblue;
+    outline: 1px solid yellow;
+    background-color: #000;
+    height: 15px;
+    width: 15px;
+    
 }
