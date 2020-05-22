@@ -1,5 +1,5 @@
 # sketchpad3
-make a image by hovering your mouse over the cells on the sketchpad
+Make a image by hovering your mouse over the cells on the sketchpad
 
 To get started, clone this repository
 ```bash
