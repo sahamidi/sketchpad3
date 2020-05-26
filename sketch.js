@@ -1,3 +1,4 @@
+'use-strict'
 // make the grid based on user input
 var x = 960 //document.getElementById('gridInput').value;
 var divOri = document.getElementById("container")
@@ -5,29 +6,27 @@ var divOri = document.getElementById("container")
 const numberOfRows = 96; //create variable defining row numbers
 const numberOfColumns = 96; //create variable defining column numbers
 
-document.getElementById('container').addEventListener('click', 
-function(){
-for(let i = 0; i < numberOfRows; i++) {  //create lopp to make new div element to place in container for row
-    var rowDiv=document.createElement('div')
-    divOri.appendChild(rowDiv)
-    rowDiv.className = "gridRow" //create loop to maak new div element to place cells in each row
 
-   }
-   for(let j = 0; j < numberOfColumns; j++) {
-    var cell = document.createElement('div') 
-    rowDiv.appendChild(cell)
-    cell.className = "cell"
-    addEventListener('mouseover', function() {
-        cell.style.backgroundColor = "red"
-   }
-   )
-   
-
+function changeStyle(e) {
+    e.currentTarget.style.backgroundColor='red'
 }
-})
 
+            for(i=0;i < numberOfRows; i++) {  //create lopp to make new div element to place in container for row
+                var rowDiv=document.createElement('div')
+                divOri.appendChild(rowDiv)
+                rowDiv.className = "gridRow" //create loop to maak new div element to place cells in each row
+                for(let j = 0; j < numberOfColumns; j++) {
+                    var cell = document.createElement('div') 
+                    rowDiv.appendChild(cell)
+                    cell.className = "cell"
+                    const cellID =  `cell-${i}-${j}`
+                    cell.id = cellID
+                    document.getElementById(cellID)
+                    .addEventListener('mouseover', changeStyle)
 
+                }        
 
+            }
 
 
 // function (){
