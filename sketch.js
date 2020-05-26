@@ -1,127 +1,50 @@
-'use-strict'
-// make the grid based on user input
-var x = 960 //document.getElementById('gridInput').value;
-var divOri = document.getElementById("container")
 
-const numberOfRows = 96; //create variable defining row numbers
-const numberOfColumns = 96; //create variable defining column numbers
+document.getElementById('button').addEventListener('click',   //Initialize sketch program by click of button after
+                                                              //aftervalue is put in input box  
+function() {
+var divOri = document.getElementById("container");             //Define commonly used container ID which holds cells and rows  
+let cellMath = Number((960*960)/Number(document.getElementById('gridInput').value)); //Take container to find out how big each cell will be
+                                                                                     
+const cellSize = Math.sqrt(cellMath)                                                 //Conitue math function to determine size of cells
+
+const numberOfRows = Math.floor(960/cellSize); //create variable defining row numbers
+
+const numberOfColumns = Math.floor(960/cellSize); //create variable defining column numbers
 
 
-function changeStyle(e) {
-    e.currentTarget.style.backgroundColor='red'
+function changeStyle(e) {                         //Event target calling on activating mouseover functino color change
+    e.currentTarget.style.backgroundColor='yellow'
 }
+
+if (Number(document.getElementById('gridInput').value)>0) {  //Sketch game reset when user clicks in the input box
+
+    document.getElementById('gridInput').addEventListener('click',function(){location.reload()})
+
+}
+
+
 
             for(i=0;i < numberOfRows; i++) {  //create lopp to make new div element to place in container for row
                 var rowDiv=document.createElement('div')
                 divOri.appendChild(rowDiv)
-                rowDiv.className = "gridRow" //create loop to maak new div element to place cells in each row
-                for(let j = 0; j < numberOfColumns; j++) {
+                rowDiv.className = "gridRow" 
+                rowDiv.style.height=cellSize+'px';
+                for(let j = 0; j < numberOfColumns; j++) {  //Create cell boxes to place in each row with specified size
                     var cell = document.createElement('div') 
                     rowDiv.appendChild(cell)
                     cell.className = "cell"
                     const cellID =  `cell-${i}-${j}`
                     cell.id = cellID
+                    document.getElementById(cellID).style.height=cellSize+'px'
+                    document.getElementById(cellID).style.width=cellSize+'px'
                     document.getElementById(cellID)
                     .addEventListener('mouseover', changeStyle)
 
+
                 }        
-
             }
-
-
-// function (){
-
-//     var x = document.getElementById('gridInput').value;
-//     x=Number(x)
-
-//     if (x==null|| typeof (x)==='string'){
-
-//         alert(`please enter a valid number in the field`)
-
-//         x = 10;
-
-//         makeGrid(10)
-// }
-
-//     else if (typeof (x) === 'number') {
-
-//         makeGrid(x);
-// }})
-
-// function createDiv(text){
-
-//     var div = document.createElement(div)
-
-//     div.className = 'grid'
-
-//     var divOri = document.getElementById("container")
-
-//     divOri.appendChild(div)    
-    
-// }
-
-
-// // function makeGrid(x){
-// //     i=0
-// //     while (i<x) {
-// //         createDiv(" ")
-// //         i++
-// //     }
+            
+        })   
 
 
 
-
-
-
-
-
-
-
-
-
-// // make the grid based on user input
-// var x = document.getElementById('gridInput').value;
-// var divOri = document.getElementById("container")
-
-// document.getElementById('button').addEventListener('click', 
-
-// function (){
-
-//     var x = document.getElementById('gridInput').value;
-//     x=Number(x)
-
-//     if (x==null|| typeof (x)==='string'){
-
-//         alert(`please enter a valid number in the field`)
-
-//         x = 10;
-
-//         makeGrid(10)
-// }
-
-//     else if (typeof (x) === 'number') {
-
-//         makeGrid(x);
-// }})
-
-// function createDiv(text){
-
-//     var div = document.createElement(div)
-
-//     div.className = 'grid'
-
-//     var ivOri = document.getElementById("container")
-
-//     divOri.appendChild(div)    
-    
-// }
-
-
-// function makeGrid(x){
-//     i=0
-//     while (i<x) {
-//         createDiv(" ")
-//         i++
-//     }
-        
-// }
