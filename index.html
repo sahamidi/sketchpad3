@@ -3,13 +3,18 @@
 <head>
     <link href = "sketch.css" rel="stylesheet" type = "text/css">
 <title>Sketchpad</title>
-<meta charset="UTF-8"/>
 </head>
-<input  type="text" id="gridInput" name="gridInput">
-<button type="button" id="button">Choose Grid Size Input</button>
 
 <body>
-    <script src="sketch.js"></script>
-<div id='container'></div>
+    <h1 id="header">SketchySketch</h1>
+<div id='instruct'>First, input the number of cells you would like in your
+    grid in the input box, then click 'Choose Grid Sze Input'.
+    Input values must be numbers and work best at 10,000 cells 
+    and lower.  Lets see those awesome sketches!!!
+</div>
+<input  type="number" id="gridInput" name="gridInput">
+<button type="button" id="button">Choose Grid Size Input</button>
+<div id='container'> </div>
+    <script src="sketch.js"> </script>
 </body>
 </html> 
